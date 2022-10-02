@@ -14,12 +14,8 @@ import {initCars} from "./pages/deleteCar/deleteCar.js";
 
 window.addEventListener("load", async () => {
 
-    const templateAbout = await loadHtml("./pages/about/about.html")
     const templateUsers = await loadHtml("./pages/users/users.html")
     const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
-    const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
-    const templateMatch = await loadHtml("./pages/show-match/match.html")
-    const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
     const templateAddCar = await loadHtml("./pages/addCar/addCar.html")
     const templateDeleteCar = await loadHtml("./pages/deleteCar/deleteCar.html")
 
@@ -44,7 +40,6 @@ window.addEventListener("load", async () => {
       This is the content of the Home Route
       </p>
      `,
-            "/about": () => renderTemplate(templateAbout, "content"),
 
             "/users": () => {
                 renderTemplate(templateUsers, "content")
@@ -53,11 +48,6 @@ window.addEventListener("load", async () => {
             "/find-user": (match) => {
                 renderTemplate(templateFindUser, "content")
                 initFindUser(match)
-            },
-
-            "/navigate-programatically": () => {
-                renderTemplate(templateNavigate, "content")
-                initNavigate()
             },
 
             "/show-match": (match) => {
